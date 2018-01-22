@@ -1,0 +1,4 @@
+<% content_for :title, "Feedback" %>
+
+
+<%= raw Feedback.setting(:thanks_message, '<p>Thanks for your submission.</p>', field_type: 'rich_text', role: 'Admin') %>
