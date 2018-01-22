@@ -5,7 +5,7 @@ class FeedbacksController < CrudController
   end
 
   def create
-    @feedback = Feedback.new(permitted_params[:permitted_params])
+    @feedback = Feedback.new(permitted_params[:feedback])
     if [@feedback.valid?, verify_recaptcha(model: @feedback)].all?
       @feedback.save
       FeedbackMailer.delay_for(10.seconds).feedback_created(@feedback.id)

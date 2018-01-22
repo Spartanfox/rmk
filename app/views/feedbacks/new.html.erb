@@ -1,5 +1,4 @@
 <% content_for :title, "New Feedback" %>
-
 <%= simple_form_for(@feedback) do |f| %>
 
   <div class="spacing">
@@ -12,10 +11,11 @@
 
     <div class="inputs">
       <%= f.input :room_number %>
+      <%= f.input :ward_or_department, as: "select", collection: Feedback::WARDS_DEPARTMENTS, prompt: "Please select...", input_html: { class: "form--auto" } %>
       <%= f.input :positive_aspects %>
       <%= f.input :could_do_better %>
       <%= f.input :feel_well_informed, as: "select", required: true, prompt: "Please select...", input_html: { class: "form--auto" } %>
-      <%= f.input :please_comment %>
+      <%= f.input :please_comment, required: true %>
       <%= f.input :aware_of_rights, as: "select", required: true, prompt: "Please select...", input_html: { class: "form--auto" } %>
       <div class="inputs" data-show="feedback_aware_of_rights" data-show-option="true">
         <h2 class="form--group--heading">How were you made aware of your Rights and Responsibilities?</h2>
@@ -31,7 +31,6 @@
       <%= f.input :address %>
       <%= f.input :telephone %>
       <%= f.input :involved_in_forum, as: "select", required: true, prompt: "Please select...", input_html: { class: "form--auto" } %>
-      <%= f.input :ward_or_department %>
       <%= f.input :image, as: "file", class:"button__confirm"%>
       <%= f.input :wish_to_be_contacted, as: "select", required: true, prompt: "Please select...", input_html: { class: "form--auto" } %>
       <%= recaptcha_tags %>
