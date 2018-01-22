@@ -289,7 +289,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    pg (1.0.0)
+    pg (0.21.0)
     phony (2.16.3)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -335,6 +335,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
+    recaptcha (4.6.3)
+      json
     redis (4.0.1)
     redis-namespace (1.6.0)
       redis (>= 3.0.4)
@@ -427,8 +429,10 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   compass (~> 1.0.0)
   compass-rails (~> 2.0.2)
+  dragonfly (~> 1.1.4)
   engineyard
   ey_config
+  htmlentities (~> 4.3.4)
   i18n-active_record!
   jbuilder (~> 2.0)
   jquery-rails
@@ -438,10 +442,11 @@ DEPENDENCIES
   koi_config!
   newrelic_rpm
   ornament!
-  pg
+  pg (~> 0.18)
   pry-rails
   rack-mini-profiler
   rails (= 4.2.1)
+  recaptcha
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sidekiq
