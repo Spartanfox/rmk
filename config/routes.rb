@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  namespace(:admin) { resources :feedbacks }
+  resources :feedbacks, only: [:index, :new, :create, :thanks] { collection { get 'thanks' } }
+  get '/styleguide/:action' => 'styleguide'
+  get '/styleguide' => 'styleguide#index'
+  resources :uploads do
+    post :image, on: :collection
+  end
   resources :documents, only: [:show]
   resources :images, only: [:show]
   resources :assets, only: [:show]
   resources :pages, only: [:index, :show], as: :koi_pages
   root to: 'pages#index'
   mount Koi::Engine => "/admin", as: "koi_engine"
+
+  #resources :feedback, path: 'feedback'
+
+
   get "/:id"  => "pages#show", as: :page
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

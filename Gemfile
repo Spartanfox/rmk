@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,7 +39,8 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end
-
+gem "recaptcha", require: "recaptcha/rails"
+gem 'dragonfly', '~> 1.1.4'
 
 gem 'jquery-ui-rails'
 gem 'airbrake', '4.3'
@@ -63,3 +64,5 @@ group :development do
   gem 'ornament', github: 'katalyst/ornament'
   gem 'rack-mini-profiler'
 end
+
+gem 'htmlentities', '~> 4.3.4'
